@@ -2,7 +2,6 @@ import React from "react";
 import Watchlist from "./watchlist";
 import { WatchlistApi } from "./watchlistApi";
 import WatchlistForm from './watchlistForm';
-import NavBar from './navBar';
 
 export default class WatchlistArray extends React.Component {
     constructor(props){
@@ -53,7 +52,7 @@ export default class WatchlistArray extends React.Component {
         console.log(`Rendering jsx:`, this.state)
         return(
             <div className="watchlist-array text-white">
-                <NavBar />
+                {/* <NavBar /> */}
                 <WatchlistForm addWatchlist = {this.addWatchlist} />
                 {this.state.watchlists.map((watchlist, index) => {
                 return(
