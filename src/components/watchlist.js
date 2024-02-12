@@ -19,6 +19,17 @@ export default function Watchlist({ watchlist, updateWatchlist, deleteWatchlist 
     //         </div>
     //     )
     // }
+    const reviews = {
+        reviews: []
+    };
+
+    const addReview = (user, stars, content, date) => {
+        const updatedReviews = {
+            ...reviews, reviews: [...reviews.reviews, {user: user, stars: stars, content: content, date: date}]
+        }
+        console.log(`Updated Reviews`, updatedReviews);
+        return updatedReviews;
+    };
 
     const deleteShow = (showId) => {
         // creating an updated copy of watchlist which copies watchlist object and filters out the corresponding show by id from shows property within watchlist
@@ -51,6 +62,10 @@ export default function Watchlist({ watchlist, updateWatchlist, deleteWatchlist 
                     <button className='btn btn-outline-secondary ms-2' onClick={()=>deleteShow(show.id)}>
                         Delete Show
                     </button>
+                    {/* add a button for review show */}
+                    <a href='/reviews'><button className='btn btn-outline-light ms-2' onClick={()=>addReview(show.id)}>
+                        Add Review
+                    </button></a>
                 </li>
                 <ul>
                     <li className='bg-dark border-dark text-danger'>{` Type: ${show.type}`}</li>

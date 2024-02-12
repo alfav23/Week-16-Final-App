@@ -1,8 +1,9 @@
 // home page with a log in to determine which user's watchlists to display, and welcome
-import React, {useState} from 'react';
-import WatchlistArray from './watchlistArray';
+import React, {useState, useEffect} from 'react';
+import { WatchlistApi } from './watchlistApi';
 
 export default function Home() {
+    const [watchlistCount, setWatchlistCount] = useState(0);
     const [user, setUser] = useState('');
     const [hideUserLogin, setHideUserLogin] = useState(true);
     const [hideWelcome, setHideWelcome] = useState(false);
@@ -14,7 +15,17 @@ export default function Home() {
         setHideUserLogin(!hideUserLogin);
         setHideWelcome(!hideWelcome);
     };
+
+    const getWatchlistCount = async () => {
+        let watchlists = await WatchlistApi.get();
+        setWatchlistCount(watchlists.length);
+    };
+
     // also display # of watchlists and "go to my watchlists"
+    useEffect(() => {
+        getWatchlistCount();
+    }, []);
+
     return(
         <div>
             {hideUserLogin ? (
@@ -37,7 +48,7 @@ export default function Home() {
             {hideWelcome ? (
             <div id='welcome-message'>
                 <h2>Welcome, {user}... </h2>
-                <p>You have {"3"} <a id="watchlist-link" href='/watchlists'>watchlists</a>.</p>
+                <p>You have {watchlistCount} <a id="watchlist-link" href='/watchlists'>watchlists</a>.</p>
             <div>
                 <button id="change-user-btn" className='btn btn-sm btn-secondary' onClick={() => showLogin()}>Change User</button>
             </div>
