@@ -43,3 +43,7 @@ input {
 }
 
 /* :hover not working for some reason */
+.review-form {
+  max-width: 18rem;
+  margin-inline-start: 1rem;
+}

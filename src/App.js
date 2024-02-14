@@ -9,6 +9,12 @@ import Home from './components/home';
 
 // edit App function to be a class and export
 export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      reviews:[]
+    }
+  }
   render(){
     return(
       <div>
@@ -22,7 +28,7 @@ export default class App extends React.Component {
               <WatchlistArray />
             </Route>
             <Route path="/reviews">
-              <Reviews />
+              <Reviews reviews = {this.state.reviews}/>
             </Route>
           </Switch>
           </BrowserRouter>

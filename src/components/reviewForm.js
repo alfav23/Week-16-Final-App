@@ -3,7 +3,7 @@ import React, {useState} from "react";
 export default function ReviewForm (props) {
     const [user, setUser] = useState('');
     const [stars, setStars] = useState(0);
-    const [content, setContent] =useState('');
+    const [content, setContent] = useState('');
     const date = new Date();
 
     const onSubmit = (e) => {
@@ -19,8 +19,8 @@ export default function ReviewForm (props) {
 
     return(
         <div>
-            <form>
-                <h6>Review for {"Show"}</h6>
+            <form className=" review-form form-control bg-dark text-white">
+                <h6>Create A Review</h6>
                 <label>User</label>
                 <input 
                     placeholder="Enter user..."
@@ -30,7 +30,7 @@ export default function ReviewForm (props) {
                 </input>
                 <br></br>
                 <label>Stars</label>
-                <select onSelect={(e) => setStars(e.target.value)} value={stars} defaultValue='0' className="custom-select">
+                <select onSelect={(e) => setStars(e.target.value)} defaultValue={stars} className="custom-select">
                         {/* options correspond to values to later populate in  review  */}
                         <option value='0'>Choose...</option>
                         <option value="1">⭐</option>
@@ -41,13 +41,16 @@ export default function ReviewForm (props) {
                     </select>
                 <br></br>
                 <label>What did you think?</label>
+                <br></br>
                 <textarea 
+                    className="review-content rounded-3"
                     placeholder="Enter review..."
                     type='text'
                     onChange={(e) => setContent(e.target.value)}
                     value={content}>
                 </textarea>
-                <button onSubmit={onSubmit()}></button>
+                <br></br>
+                <button className="btn btn-light" onSubmit={onSubmit}>Post Review</button>
             </form>
         </div>
     )

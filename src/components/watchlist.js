@@ -1,35 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ShowForm } from './showForm';
-import EditForm from './editForm';
 
 export default function Watchlist({ watchlist, updateWatchlist, deleteWatchlist }) {
-    // const { watchlist, updateWatchlist, deleteWatchlist } = props;
+    // set reviews
+    const [reviews, setReviews] = useState({
+        reviews: [
+        // {
+        //   user: 'user',
+        //   stars: '5',
+        //   content: 'This was good',
+        //   date: date.toDateString(),
+        // },
+        ]
+    });
 
-    // new feature: edit show
-    // const editShow = (showId, editName, editType, editService, editGenre) => {
-    //     const updatedWatchlist = {
-    //         ...watchlist, shows: [...watchlist.shows, {name: editName, type: editType, streamingService: editService, genre: editGenre, id: showId}]
-    //     }
-    //     // access current information and change it
-    //     // editable text or use add show form? new form?
-    //     this.updateWatchlist(updatedWatchlist);
-    //     return(
-    //         <div>
-    //             <EditForm />
-    //         </div>
-    //     )
-    // }
-    const reviews = {
-        reviews: []
-    };
-
+    // add review function
     const addReview = (user, stars, content, date) => {
         const updatedReviews = {
-            ...reviews, reviews: [...reviews.reviews, {user: user, stars: stars, content: content, date: date}]
-        }
+        ...reviews, reviews: [...reviews.reviews, {user: user, stars: stars, content: content, date: date}]
+        };
+        setReviews(updatedReviews);
         console.log(`Updated Reviews`, updatedReviews);
         return updatedReviews;
-    };
+};
 
     const deleteShow = (showId) => {
         // creating an updated copy of watchlist which copies watchlist object and filters out the corresponding show by id from shows property within watchlist
