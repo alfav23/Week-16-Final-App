@@ -2,28 +2,6 @@ import React, {useState} from 'react';
 import { ShowForm } from './showForm';
 
 export default function Watchlist({ watchlist, updateWatchlist, deleteWatchlist }) {
-    // set reviews
-    const [reviews, setReviews] = useState({
-        reviews: [
-        // {
-        //   user: 'user',
-        //   stars: '5',
-        //   content: 'This was good',
-        //   date: date.toDateString(),
-        // },
-        ]
-    });
-
-    // add review function
-    const addReview = (user, stars, content, date) => {
-        const updatedReviews = {
-        ...reviews, reviews: [...reviews.reviews, {user: user, stars: stars, content: content, date: date}]
-        };
-        setReviews(updatedReviews);
-        console.log(`Updated Reviews`, updatedReviews);
-        return updatedReviews;
-};
-
     const deleteShow = (showId) => {
         // creating an updated copy of watchlist which copies watchlist object and filters out the corresponding show by id from shows property within watchlist
         const updatedWatchlist = {
@@ -56,7 +34,7 @@ export default function Watchlist({ watchlist, updateWatchlist, deleteWatchlist 
                         Delete Show
                     </button>
                     {/* add a button for review show */}
-                    <a href='/reviews'><button className='btn btn-outline-light ms-2' onClick={()=>addReview(show.id)}>
+                    <a href='/reviews'><button className='btn btn-outline-light ms-2'>
                         Add Review
                     </button></a>
                 </li>

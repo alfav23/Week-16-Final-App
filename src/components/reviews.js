@@ -3,6 +3,7 @@ import ReviewForm from "./reviewForm";
 
 export default function Reviews(props){
     const {watchlists, addReview, reviews} = props;
+    console.log(reviews);
     return(
         <div>
             <h4>Reviews</h4>

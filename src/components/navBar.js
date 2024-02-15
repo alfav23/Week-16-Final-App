@@ -10,7 +10,6 @@ export default function NavBar() {
                 <img src="../download.png" width="40" height="40" className="d-inline-block align-center border border-dark rounded-4" alt="TV clipart"/>
                    &nbsp; CRUD React Watchlist App 2.0
                 </a>
-                <BrowserRouter>
                 <ul className='navbar-nav mr-auto'>
                     <li className='nav-item'>
                         <Link className='nav-link' to="/home">Home</Link>
@@ -22,7 +21,6 @@ export default function NavBar() {
                         <Link className='nav-link' to="/reviews">My Reviews</Link>
                     </li>
                 </ul>
-                </BrowserRouter>
             </nav>
         </div>
     )
