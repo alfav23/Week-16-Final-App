@@ -72,11 +72,11 @@
       "listName": "Flavio's Watchlist",
       "shows": [
         {
-          "name": "Totally Killer",
-          "type": "Movie",
-          "streamingService": "Prime",
-          "genre": "Comedy/Suspense",
-          "id": 4930
+          "name": "Dracula",
+          "type": "Show",
+          "streamingService": "Netflix",
+          "genre": "Vampire",
+          "id": 6592
         }
       ],
       "id": 5
