@@ -14,14 +14,15 @@ export default class App extends React.Component {
     this.state ={
       reviews:[]
     }
+    console.log(this.state);
   }
-
-  addReview = (user, stars, content, date) => {
+  
+  addReview = (show, user, stars, content, date) => {
     const updatedReviews = {
-    ...this.state, reviews: [...this.state.reviews, {user: user, stars: stars, content: content, date: date}]
+    ...this.state, reviews: [...this.state.reviews, {show: show, user: user, stars: stars, content: content, date: date}]
     };
-    this.setReviews(updatedReviews);
-    console.log(`Updated Reviews`, updatedReviews);
+    this.setState(updatedReviews);
+    console.log(`Updated Reviews`, updatedReviews, this.state.reviews);
     return updatedReviews;
 };
   render(){

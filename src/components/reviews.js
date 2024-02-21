@@ -2,7 +2,7 @@ import React from "react";
 import ReviewForm from "./reviewForm";
 
 export default function Reviews(props){
-    const {watchlists, addReview, reviews} = props;
+    const {addReview, reviews} = props;
     console.log(reviews);
     return(
         <div>
@@ -10,12 +10,15 @@ export default function Reviews(props){
             <ReviewForm addReview = {addReview}/>
             {/* map out reviews */}
             {reviews.map((review, index) => (
-                <div review = {review} key = {index} className="card bg-dark text-white">
-                    <div className="card-title"></div>
-                        <h4> Review for {watchlists.show.name}</h4>
-                        <h6 className="text-end"> {review.user} </h6>
-                        <h6 className="text-end"> {review.date} </h6>
+                <div review = {review} key = {index} className="card bg-dark border border-light text-white">
+                    <div className="card-title">
+                        <h4> Review for {review.show}</h4>
+                        <h6 className="m-2 text-start"> by {review.user} </h6>
+                        <h6 className="m-2 text-start"> {review.date.toString()}</h6>
+                    </div>
+                        <p className="m-2">Stars: {review.stars}</p>
                         <p className="card-body">{review.content}</p>
+                        <button className="btn btn-secondary">Delete Review</button>
                 </div>
             ))}
         </div>
