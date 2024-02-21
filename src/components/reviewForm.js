@@ -15,7 +15,7 @@ export default function ReviewForm (props) {
         // reset inputs to empty
         setShow('');
         setUser('');
-        setStars(0);
+        setStars('0');
         setContent('');
     };
 

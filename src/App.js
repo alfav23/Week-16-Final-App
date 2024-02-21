@@ -24,7 +24,14 @@ export default class App extends React.Component {
     this.setState(updatedReviews);
     console.log(`Updated Reviews`, updatedReviews, this.state.reviews);
     return updatedReviews;
-};
+  };
+
+  deleteReview = (index) => {
+    const updatedReviews = [this.state.reviews];
+    updatedReviews.splice(index, 1);
+    this.setState({reviews: updatedReviews})
+  };
+
   render(){
     return(
       <div>
@@ -35,7 +42,7 @@ export default class App extends React.Component {
               </Route>
               <Route path="/watchlists" element={<WatchlistArray/>}>
               </Route>
-              <Route path="/reviews" element={<Reviews addReview={this.addReview} reviews={this.state.reviews}/>}>
+              <Route path="/reviews" element={<Reviews deleteReview={this.deleteReview} addReview={this.addReview} reviews={this.state.reviews}/>}>
               </Route>
             </Routes>
         </BrowserRouter>

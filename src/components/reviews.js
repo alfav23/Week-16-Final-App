@@ -2,7 +2,7 @@ import React from "react";
 import ReviewForm from "./reviewForm";
 
 export default function Reviews(props){
-    const {addReview, reviews} = props;
+    const {deleteReview, addReview, reviews} = props;
     console.log(reviews);
     return(
         <div>
@@ -18,7 +18,7 @@ export default function Reviews(props){
                     </div>
                         <p className="m-2">Stars: {review.stars}</p>
                         <p className="card-body">{review.content}</p>
-                        <button className="btn btn-secondary">Delete Review</button>
+                        <button onClick={deleteReview} className="btn btn-secondary">Delete Review</button>
                 </div>
             ))}
         </div>
