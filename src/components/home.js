@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { WatchlistApi } from './watchlistApi';
 
 export default function Home() {
+    // useState to hide and display components as needed and store and display user data
     const [watchlistCount, setWatchlistCount] = useState(0);
     const [user, setUser] = useState('');
     const [hideUserLogin, setHideUserLogin] = useState(true);
@@ -15,7 +16,7 @@ export default function Home() {
         setHideUserLogin(!hideUserLogin);
         setHideWelcome(!hideWelcome);
     };
-
+    // function to retrieve and display watchlists count 
     const getWatchlistCount = async () => {
         let watchlists = await WatchlistApi.get();
         setWatchlistCount(watchlists.length);
