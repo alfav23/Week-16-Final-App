@@ -5,7 +5,7 @@ import React, {useState} from "react";
 export default function WatchlistForm(props) {
     const [listName, setListName] = useState('');
 
-    // on submit function to 
+    // on submit function to update watchlists upon clicking create button
     function onSubmit(e){
         console.log(`data submitted`)
         e.preventDefault();

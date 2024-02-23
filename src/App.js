@@ -7,7 +7,7 @@ import Reviews from './components/reviews';
 import NavBar from './components/navBar';
 import Home from './components/home';
 
-// edit App function to be a class and export
+
 export default class App extends React.Component {
   constructor(props){
     super(props);
@@ -17,6 +17,7 @@ export default class App extends React.Component {
     console.log(this.state);
   }
   
+  // review functions, add and delete reviews from this.state.reviews array
   addReview = (show, user, stars, content, date) => {
     const updatedReviews = {
     ...this.state, reviews: [...this.state.reviews, {show: show, user: user, stars: stars, content: content, date: date}]
