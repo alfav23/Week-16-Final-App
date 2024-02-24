@@ -4,13 +4,6 @@
       "listName": "Jordan's List",
       "shows": [
         {
-          "name": "Totally Killer",
-          "type": "Movie",
-          "streamingService": "Prime",
-          "genre": "Comedy/Thriller",
-          "id": 4965
-        },
-        {
           "name": "Renfield",
           "type": "Movie",
           "streamingService": "Netflix",

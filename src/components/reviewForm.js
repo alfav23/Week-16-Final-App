@@ -15,6 +15,7 @@ export default function ReviewForm (props) {
         // reset inputs to empty
         setShow('');
         setUser('');
+        // not sure what to set stars to in order to get it to clear out after submit
         setStars('0');
         setContent('');
     };
@@ -39,6 +40,7 @@ export default function ReviewForm (props) {
                     value={user}>
                 </input>
                 <br></br>
+                {/* stars component */}
                 <label>Stars</label>
                 <select onChange={(e) => setStars(e.target.value)} defaultValue={stars} className="custom-select">
                         {/* options correspond to values to later populate in  review  */}
