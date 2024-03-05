@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // start w navbar and add home, watchlist, and reviews page link
 export default function NavBar() {

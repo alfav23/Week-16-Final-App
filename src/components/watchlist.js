@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { ShowForm } from './showForm';
 
 export default function Watchlist({ watchlist, updateWatchlist, deleteWatchlist }) {
